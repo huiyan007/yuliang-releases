@@ -1,0 +1,405 @@
+/* Compact income, subsidy, repayment and deposit records on Android. */
+body #content table.mobile-records tr:is(.preview-receipt-row, .preview-subsidy-row, .touch-record:has(.account-name)) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto) 32px !important;
+  grid-template-rows: 20px 16px;
+  align-items: start !important;
+  align-content: center;
+  min-height: 57px;
+  padding: 8px 10px !important;
+  gap: 4px 6px !important;
+}
+
+body #content table.mobile-records tr:is(.preview-receipt-row, .preview-subsidy-row, .touch-record:has(.account-name)) > .record-more {
+  grid-row: 1 / 3 !important;
+  align-self: center;
+  justify-self: end;
+}
+
+body #content table.mobile-records :is(.preview-receipt-row, .preview-subsidy-row, .touch-record:has(.account-name)) > td {
+  line-height: 1.35 !important;
+}
+
+body #content table.mobile-records .preview-receipt-row td:first-child {
+  grid-column: 1 !important;
+  grid-row: 1 / 3 !important;
+  grid-template-rows: 20px 16px;
+  gap: 4px;
+}
+
+body #content .preview-receipt-row td:first-child > span,
+body #content .preview-subsidy-row .preview-subsidy-name > span {
+  display: block;
+}
+
+body #content .preview-receipt-row td:first-child > span,
+body #content .preview-subsidy-row .preview-subsidy-name > span,
+body #content .deposit-accounts td.account-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+}
+
+body #content .preview-receipt-row td:first-child > span,
+body #content table.mobile-records .preview-subsidy-row td.preview-subsidy-name,
+body #content table.mobile-records .touch-record:has(.account-name) td.account-name {
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 20px !important;
+}
+
+body #content table.mobile-records .preview-receipt-row :is(.receipt-covered-label, td:nth-child(3)),
+body #content table.mobile-records .preview-subsidy-row :is(.preview-subsidy-index, .preview-subsidy-kind),
+body #content .deposit-accounts td:is([data-label="备注"], .record-state) {
+  display: none !important;
+}
+
+body #content .preview-receipt-row .receipt-amount span,
+body #content .deposit-accounts .savings-reserve {
+  display: block;
+  max-width: min(41vw, 156px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 16px;
+}
+
+body #content table.mobile-records .preview-receipt-row td:nth-child(2) {
+  grid-column: 2 !important;
+  grid-row: 1 / 3 !important;
+  text-align: right !important;
+}
+
+body #content .preview-receipt-row .receipt-amount {
+  display: grid !important;
+  grid-template-rows: 20px 16px;
+  justify-items: end;
+  gap: 4px !important;
+}
+
+body #content .preview-receipt-row .receipt-amount b,
+body #content .preview-subsidy-row .record-money .amount-edit-target,
+body #content .deposit-accounts .record-money .amount-edit-target {
+  font-size: var(--preview-fitted, 15px) !important;
+  font-weight: 650 !important;
+  line-height: 20px !important;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap !important;
+}
+
+body #content .preview-receipt-row .receipt-amount .compact-expected-amount { color: var(--muted) !important; }
+
+body #content .preview-receipt-row td:first-child > .muted,
+body #content table.mobile-records .preview-subsidy-row .record-date,
+body #content table.mobile-records .preview-subsidy-row .record-state,
+body #content .preview-subsidy-row .record-status,
+body #content table.mobile-records .deposit-accounts td[data-label="卡号尾号"] {
+  font-size: 11px !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+}
+
+body #content table.mobile-records .preview-subsidy-row .record-date {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  min-width: 0;
+  color: var(--muted) !important;
+  font-size: 11px !important;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body #content table.mobile-records .preview-subsidy-row .record-state {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  text-align: right;
+}
+
+body #content table.mobile-records .preview-subsidy-row .record-money {
+  grid-column: 2 !important;
+  max-width: 100%;
+}
+
+body #content .preview-subsidy-row .amount-edit-target,
+body #content .deposit-accounts td.record-money .amount-edit-target {
+  min-height: 0 !important;
+  vertical-align: top;
+}
+
+body #content.view-5 .record-money .amount-edit-target:has(.savings-reserve) {
+  gap: 4px;
+}
+
+body #content .deposit-accounts .savings-reserve {
+  margin: 0;
+  color: var(--muted);
+}
+
+body #content .deposit-accounts td[data-label="卡号尾号"] {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  font-size: 11px !important;
+}
+
+body #content .deposit-accounts td.record-money {
+  grid-row: 1 / 3 !important;
+}
+
+/* Savings accounts follow the compact bank-card list pattern. */
+body #content .deposit-accounts > .toolbar {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start !important;
+  gap: 6px 10px !important;
+  margin-bottom: 4px !important;
+}
+body #content .deposit-accounts > .toolbar > .primary {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  min-height: 34px !important;
+}
+body #content .deposit-accounts .panel-heading-copy { align-content: start; }
+body #content .deposit-accounts > .toolbar .panel-tools { grid-column: 1 / -1; }
+body #content .deposit-accounts .panel-tools button:not(.primary) {
+  min-height: 32px !important;
+  padding: 4px 9px !important;
+  color: var(--green) !important;
+  background: var(--soft) !important;
+  border: 1px solid transparent !important;
+}
+body #content .deposit-accounts .panel-tools button[aria-pressed="true"] {
+  border-color: var(--green) !important;
+}
+body #content .deposit-accounts > .table-scroll {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+body #content .deposit-accounts table.mobile-records { border: 0 !important; }
+body #content .deposit-accounts table.mobile-records tbody { gap: 8px !important; }
+body #content .deposit-accounts table.mobile-records tr.compact-account-row {
+  grid-template-columns: 45px minmax(0, 1fr) auto 28px !important;
+  grid-template-rows: 19px 22px;
+  min-height: 65px;
+  padding: 9px 8px !important;
+  gap: 2px 8px !important;
+  align-items: center !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  background: var(--surface) !important;
+}
+body #content .deposit-accounts table.mobile-records .compact-account-row td:not(.account-name, .record-money, .compact-account-icon) {
+  display: none !important;
+}
+body #content .deposit-accounts table.mobile-records .compact-account-row td.record-money {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  align-self: center !important;
+  max-width: 100%;
+  text-align: left !important;
+}
+body #content .deposit-accounts .compact-account-row .amount-edit-target {
+  font-size: var(--preview-fitted, 16px) !important;
+  text-align: left;
+}
+body #content .deposit-accounts table.mobile-records tr.compact-account-row:has(.account-name) > .record-more {
+  grid-column: 4 !important;
+  grid-row: 1 / 3 !important;
+  align-self: center !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  min-height: 34px !important;
+}
+body #content .deposit-accounts table.mobile-records .compact-account-row td.account-name {
+  grid-column: 2 / 4 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  gap: 4px;
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: 19px !important;
+  align-self: center !important;
+  align-items: center;
+  font-size: 13px !important;
+}
+body #content .compact-account-caption { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+body #content .compact-account-tail { flex: none; color: var(--muted); font-size: 10px; font-weight: 400; }
+body #content .deposit-accounts table.mobile-records .compact-account-row .compact-account-icon {
+  grid-column: 1 !important;
+  grid-row: 1 / 3 !important;
+  align-self: center;
+}
+body #content .compact-account-icon span {
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 31px;
+  border-radius: 5px;
+  background: radial-gradient(ellipse at 115% 105%, #ffffff40 0 40%, transparent 41%),
+    linear-gradient(140deg, #417c69, #225745);
+}
+body #content .compact-account-icon[data-kind="wallet"] span {
+  background: radial-gradient(ellipse at 115% 105%, #ffffff40 0 40%, transparent 41%),
+    linear-gradient(140deg, #6b8a9f, #39566c);
+}
+body #content .compact-account-icon[data-kind="cash"] span {
+  background: radial-gradient(ellipse at 115% 105%, #ffffff40 0 40%, transparent 41%),
+    linear-gradient(140deg, #9e8261, #694e32);
+}
+body #content .compact-account-icon[data-kind="bank"] span::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  width: 8px;
+  height: 6px;
+  border-radius: 2px;
+  background: #ffefc6;
+}
+body #content .compact-account-icon svg {
+  position: absolute;
+  inset: 6px auto auto 12px;
+  width: 21px;
+  height: 19px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body #content .compact-account-detail {
+  flex: none;
+  min-height: 18px !important;
+  padding: 0 4px !important;
+  border: 0;
+  border-radius: 4px;
+  color: var(--green) !important;
+  background: var(--soft) !important;
+  font-size: 10px;
+  line-height: 18px;
+}
+body #content .compact-account-transfer {
+  grid-column: 3;
+  grid-row: 2;
+  min-height: 22px !important;
+  padding: 1px 8px !important;
+  border: 1px solid var(--line);
+  border-radius: 20px !important;
+  color: var(--green) !important;
+  background: transparent !important;
+  font-size: 11px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+/* Two-line installment records and a compact numeric schedule. */
+body #content .repayment-detail-panel table.mobile-records tr.touch-record {
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto) 36px !important;
+  grid-template-rows: minmax(20px, auto) 16px;
+  gap: 2px 8px !important;
+  padding: 7px 10px !important;
+  align-items: center !important;
+}
+body #content .repayment-detail-panel table.mobile-records tr.touch-record td:first-child {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  line-height: 20px !important;
+}
+body #content .repayment-detail-panel table.mobile-records tr.touch-record .record-money {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 20px !important;
+}
+body #content .repayment-detail-panel .record-money .amount-edit-target {
+  min-height: 0 !important;
+  line-height: 20px !important;
+  vertical-align: top;
+}
+body #content .repayment-detail-panel table.mobile-records .record-date {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  font-variant-numeric: tabular-nums;
+}
+body #content .repayment-detail-panel table.mobile-records .record-state {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  text-align: right;
+}
+body #content .repayment-detail-panel table.mobile-records :is(.record-date, .record-state, .record-status) {
+  font-size: 11px !important;
+  line-height: 16px !important;
+}
+body #content .repayment-detail-panel table.mobile-records tr.touch-record > .record-more {
+  grid-column: 3 !important;
+  grid-row: 1 / 3 !important;
+  align-self: center;
+  height: 38px !important;
+  min-height: 38px !important;
+  min-width: 36px;
+}
+
+body #content .repayment-future-panel table.mobile-records tr {
+  grid-template-columns: minmax(0, .85fr) repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  padding: 6px 9px !important;
+  min-height: 32px !important;
+  align-items: center !important;
+  font-variant-numeric: tabular-nums;
+}
+body #content .repayment-future-panel table.mobile-records thead tr { padding: 5px 9px !important; min-height: 28px !important; }
+body #content .repayment-future-panel table.mobile-records :is(th, td) {
+  font-size: 12px !important;
+  line-height: 18px !important;
+}
+body #content .repayment-future-panel table.mobile-records tbody td:first-child {
+  font-weight: 500 !important;
+}
+body #content .repayment-future-panel table.mobile-records tfoot { display: block; }
+body #content .repayment-future-panel table.mobile-records tfoot td {
+  font-weight: 650 !important;
+  color: var(--ink) !important;
+}
+
+body #content button.record-status-control {
+  min-height: 20px !important;
+  gap: 4px !important;
+  padding: 0 5px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 5px !important;
+  background: var(--surface) !important;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  white-space: nowrap;
+}
+body #content button.record-status-control.complete {
+  background: var(--soft) !important;
+}
+body #content button.record-status-control .state-dot { display: none; }
+body #content button.record-status-control::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  flex: none;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+body #content .preview-receipt-row td:first-child > .receipt-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+body #content .receipt-row-meta > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body #content .receipt-row-meta .record-status-control { flex: none; }

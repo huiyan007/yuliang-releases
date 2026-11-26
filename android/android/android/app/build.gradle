@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+
+def webAssets = tasks.register('syncWebAssets', Sync) {
+    from('../../www') {
+        into 'www'
+    }
+    into layout.buildDirectory.dir('generated/yuliangAssets')
+}
+
+android {
+    namespace 'cn.yuliang.finance.test'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'cn.yuliang.finance.test'
+        minSdk 26
+        targetSdk 36
+        versionCode 30306
+        versionName '3.3.6'
+    }
+    sourceSets.main.assets.srcDir(webAssets)
+}
+
+tasks.named('preBuild') {
+    dependsOn webAssets
+}

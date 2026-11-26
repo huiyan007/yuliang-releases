@@ -1,0 +1,197 @@
+/* Approved mobile presentation. Financial operations remain in the shared core. */
+:root{--bg:#eef1ed;--surface:#fbfcfa;--raised:#fff;--ink:#17201b;--muted:#6b756e;--quiet:#929b95;--line:#dde3de;--green:#235f47;--soft:#e1eee6;--orange:#a75a36}
+body.dark{color-scheme:dark;--bg:#121815;--surface:#19211c;--raised:#202a23;--ink:#e6eee8;--muted:#a1aea5;--quiet:#7e8f83;--line:#334138;--green:#93c9a9;--soft:#2a4032;--orange:#e4a37b}
+body.light{color-scheme:light}
+html{background:var(--bg)!important;scroll-padding-bottom:90px}
+html body{margin:0!important;display:block!important;background:var(--bg)!important;color:var(--ink)!important;font-family:system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif!important;font-size:14px;letter-spacing:0}
+body *,body *:before,body *:after{box-sizing:border-box}
+body main{display:flex!important;flex-direction:column!important;width:100%!important;max-width:760px!important;min-height:100dvh!important;height:auto!important;margin:0 auto!important;padding:0 16px calc(90px + env(safe-area-inset-bottom))!important;gap:0!important;overflow:visible!important;background:var(--surface)!important;box-shadow:0 10px 30px #172a1f0d}
+body header{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:0 6px!important;margin:0 -16px!important;padding:12px 16px 0!important;background:var(--surface)!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+body header>div:first-child{min-width:0}
+body .mobile-brand,body .mobile-version,body header>div>.muted,body .mobile-banner{display:none!important}
+body header h2{margin:0!important;color:var(--ink)!important;font-size:21px!important;font-weight:700!important;line-height:1.3!important;letter-spacing:0!important}
+body .mobile-top-actions{display:flex;align-items:center;gap:2px;grid-column:2;grid-row:1}
+body .mobile-top-actions .icon-button{display:inline-grid!important;place-items:center;width:36px!important;height:40px!important;min-height:40px!important;min-width:0!important;padding:8px!important;border:0!important;border-radius:6px!important;background:transparent!important;color:var(--muted)!important;box-shadow:none!important}
+body .icon-button svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+body .mobile-sync span{display:none}
+body header>.mobile-toolbar-source{grid-column:1/-1;grid-row:2;display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;margin:9px 0 0!important;padding:10px 0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;gap:8px!important}
+body .month-picker-wrap{position:relative;display:block;width:auto!important;min-width:138px!important;height:40px!important;margin:0!important}
+body .month-picker-wrap .month-picker-face{display:block!important;width:100%!important;height:40px!important;min-height:40px!important;padding:0 8px 0 0!important;background:transparent!important;border:0!important;border-radius:0!important;color:var(--ink)!important;font-size:15px!important;font-weight:600!important;box-shadow:none!important;text-align:left!important}
+body .month-picker-face:after{content:'⌄';margin-left:10px;color:var(--muted)}
+body .month-picker-wrap #month{position:absolute!important;opacity:0!important;pointer-events:none!important;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;border:0!important}
+body .mobile-month-step{display:flex;gap:4px}
+body header .mobile-month-step button{width:40px!important;min-height:40px!important;padding:0!important;border:1px solid var(--line)!important;background:var(--surface)!important;color:var(--ink)!important;font-size:24px!important;line-height:1;border-radius:6px!important}
+body .mobile-sync-status{order:0;font-size:11px!important;color:var(--muted)!important;margin:0!important;padding:7px 0 1px!important;line-height:1.5!important;overflow-wrap:anywhere}
+body #content,body #content.dashboard,body #content[class^=view]{display:flex!important;flex-direction:column!important;gap:14px!important;min-width:0!important;min-height:0!important;overflow:visible!important;padding-top:12px!important}
+body button{font:inherit;min-height:40px;border-radius:6px!important;border-color:var(--line)!important;background:var(--raised);color:var(--ink);box-shadow:none!important;letter-spacing:0!important;touch-action:manipulation}
+body button:active{transform:none!important;filter:brightness(.95)}
+body :is(button,input,select,textarea):focus-visible{outline:2px solid #5f8b75!important;outline-offset:2px}
+body button.primary,body .primary,body #modalSubmit{background:#235f47!important;border-color:#235f47!important;color:#fff!important}
+body .subtle-button,body .text-button{background:transparent!important;color:var(--green)!important}
+body input,body select,body textarea{max-width:100%;min-width:0!important;border:1px solid var(--line)!important;border-radius:6px!important;background:var(--raised)!important;color:var(--ink)!important;font-size:16px!important;min-height:42px}
+body input[type=checkbox],body input[type=radio]{min-height:0!important;width:18px;height:18px;accent-color:#357a56}
+body :is(.muted,.metric-caption,.metric-state,.metric-second-line,.trend-caption,.overview-caption,.chart-caption){color:var(--muted)!important}
+body #content>.panel,body #content .compact-main-grid>.panel{display:block!important;padding:14px!important;background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:7px!important;box-shadow:none!important;min-width:0;min-height:0;max-height:none}
+body .panel h3,body h3{font-size:15px!important;line-height:1.5!important;color:var(--ink)!important;margin:0;font-weight:650!important}
+body .panel>.toolbar{display:flex!important;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:8px!important;margin-bottom:12px!important}
+body .panel>.toolbar .toolbar,body .panel-tools{display:flex!important;flex-wrap:wrap;gap:6px!important;align-items:center}
+body .panel-tools button,body .toolbar button{font-size:12px!important;padding:7px 10px!important;min-height:40px!important}
+body .cards,body .cards.three-cards,body .view-4>.cards{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0!important;background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:7px!important;overflow:hidden}
+body .cards>.card{display:block!important;position:relative!important;padding:15px 13px!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:var(--ink)!important;min-width:0}
+body .cards>.card:nth-child(even){border-left:1px solid var(--line)!important}
+body .cards>.card:nth-child(n+3){border-top:1px solid var(--line)!important}
+body .cards.three-cards>.card:first-child{grid-column:1/-1}
+body .cards.three-cards>.card:nth-child(2){border-left:0!important;border-top:1px solid var(--line)!important}
+body .cards.three-cards>.card:nth-child(3){border-left:1px solid var(--line)!important}
+body .card>span,body .summary-label,body .metric-heading>span{font-size:12px!important;color:var(--muted)!important;line-height:1.5!important}
+body .summary-label svg{display:none!important}
+body .card strong,body .card:first-child strong{display:block;color:var(--ink)!important;font-size:24px!important;font-weight:650!important;letter-spacing:-.4px!important;line-height:1.4!important;margin:7px 0 0!important;white-space:normal!important;overflow-wrap:anywhere}
+body .card:first-child>span{color:var(--muted)!important}
+body .cards.three-cards>.card:first-child strong{font-size:32px!important}
+body .card .metric-caption{font-size:11px!important;line-height:1.6!important;margin-top:6px!important}
+body .overview-cards{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+body .overview-cards>.card:first-child{grid-column:1/-1;padding:19px 16px!important;border-bottom:1px solid var(--line)!important}
+body .overview-cards>.card:first-child strong{font-size:36px!important;letter-spacing:-1px!important}
+body .overview-cards>.card:nth-child(n+2){padding:13px 10px!important;border-top:0!important;border-left:1px solid var(--line)!important}
+body .overview-cards>.card:nth-child(2){border-left:0!important}
+body .metric-heading{display:block!important;min-height:34px}
+body .metric-state,body .metric-second-line{font-size:10px!important;line-height:1.5!important;min-height:15px!important;margin:2px 0 7px!important}
+body .metric-ratio{display:block!important;margin:0!important}
+body .metric-ratio b{font-size:18px!important;color:var(--ink)!important;letter-spacing:-.4px!important}
+body .metric-ratio .ratio-total{display:block!important;font-size:10px!important;color:var(--muted)!important;margin-top:3px}
+body .overview-cards .metric-caption{display:none!important}
+body .progress-track,body .progress-rail{background:var(--line)!important;border-radius:2px!important;height:4px!important}
+body .overview-right-heading,body .overview-right-body{display:block!important}
+body .consumption-switch{display:flex;gap:3px;flex-wrap:wrap;border-radius:6px!important;background:var(--bg)!important;padding:3px!important;border:1px solid var(--line)!important;max-width:100%}
+body .consumption-switch button{font-size:11px!important;min-height:34px!important;padding:6px 9px!important;border:0!important;background:transparent!important;color:var(--muted)!important}
+body .consumption-switch button.active,body .consumption-switch [aria-pressed=true],body .consumption-switch [aria-selected=true]{background:var(--raised)!important;color:var(--green)!important;box-shadow:0 1px 3px #0001!important}
+body .overview-curve,body .income-integrated-trend,body .annual-trend{max-width:100%;min-width:0;background:transparent!important}
+body .income-integrated-summary{display:flex!important;flex-direction:column!important;gap:0!important;background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:7px!important;overflow:hidden}
+body .income-integrated-metrics{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0!important;background:transparent!important;padding:0!important}
+body .income-integrated-metrics>div{padding:15px!important;background:transparent!important;border:0!important;border-radius:0!important}
+body .income-integrated-metrics>div+div{border-left:1px solid var(--line)!important}
+body .income-integrated-metrics strong{display:block!important;font-size:27px!important;color:var(--ink)!important;line-height:1.4!important;margin-top:6px}
+body .income-integrated-metrics span{font-size:12px!important;color:var(--muted)!important}
+body .income-integrated-trend{padding:13px!important;border-top:1px solid var(--line)!important}
+body .income-integrated-trend .annual-money-chart{height:170px!important}
+body .annual-trend{margin:12px 0 0;--trend-stroke:var(--green)}
+body .annual-trend[data-metric="spending"]{--trend-stroke:var(--orange)}
+body .annual-trend-legend{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 10px;color:var(--muted);font-size:11px}
+body .annual-trend-legend span{display:inline-flex;align-items:center;gap:4px}
+body .annual-trend-legend i{width:12px;border-top:2px solid var(--trend-stroke)}
+body .annual-trend-legend i.is-partial{border-top-style:dashed}
+body .annual-trend-plot{position:relative;height:170px}
+body .annual-trend-svg{display:block;width:100%;height:100%;touch-action:pan-y}
+body .annual-trend-svg text{fill:var(--muted);font-size:11px}
+body .annual-trend-svg .annual-trend-empty{font-size:12px;paint-order:stroke;stroke:var(--raised);stroke-width:5}
+body .annual-grid{stroke:var(--line);stroke-dasharray:3 4}
+body .annual-grid.is-zero{stroke-dasharray:none}
+body .annual-line{fill:none;stroke:var(--trend-stroke);stroke-width:2}
+body .annual-line.is-partial,body .annual-guide{stroke-dasharray:4 4}
+body .annual-guide{stroke:var(--trend-stroke)}
+body .annual-dot{fill:var(--trend-stroke);stroke:var(--raised);stroke-width:1.5}
+body .annual-dot.is-partial{fill:var(--raised);stroke:var(--trend-stroke)}
+body .annual-trend-hit{fill:transparent}
+body .chart-switch{display:inline-flex;background:var(--bg)!important;border:1px solid var(--line)!important}
+body .chart-switch button{color:var(--muted)!important;background:transparent!important}
+body .chart-switch button[aria-pressed=true]{color:var(--green)!important;background:var(--soft)!important}
+body .chart-switch button:disabled{opacity:.6}
+body .income-plan-list{display:block!important}
+body .income-plan-list>.income-plan{display:block!important;margin:0!important;padding:13px 0!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .plan-heading{display:grid!important;grid-template-columns:minmax(0,1fr) auto 36px!important;gap:8px!important;align-items:center!important}
+body .plan-heading>div{min-width:0}
+body .plan-heading b{font-size:14px!important;color:var(--ink)!important;overflow-wrap:anywhere}
+body .plan-heading small{display:block!important;font-size:11px!important;color:var(--muted)!important;margin-top:4px}
+body .plan-heading strong{margin:0!important;font-size:16px!important;white-space:normal!important;max-width:130px;color:var(--ink)!important}
+body .plan-footer{display:flex!important;min-height:0!important;margin-top:5px!important;gap:6px!important;flex-wrap:wrap!important;padding:0!important;border:0!important}
+body .action-source,body .mobile-proxy,body .preset-source,body .plan-buttons{display:none!important}
+body .record-status{display:inline-flex!important;font-size:11px!important;color:var(--orange)!important;background:transparent!important;padding:0!important;line-height:1.7!important}
+body .record-status.complete{color:var(--green)!important}
+body .record-more{display:inline-grid!important;place-items:center;width:36px!important;height:40px!important;min-height:40px!important;padding:0!important;position:static!important;margin:0!important;border:0!important;border-radius:6px!important;background:transparent!important;color:var(--muted)!important;grid-column:3!important;grid-row:1!important;align-self:center!important}
+body .panel .table-scroll{overflow:visible!important;max-height:none!important;min-height:0!important}
+body #content table.mobile-records{display:block!important;min-width:0!important;width:100%!important}
+body table.mobile-records thead{display:none!important}
+body table.mobile-records tbody{display:flex!important;flex-direction:column!important;gap:0!important}
+body table.mobile-records tr{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(88px,auto) 36px!important;align-items:start!important;gap:5px 8px!important;padding:13px 0!important;margin:0!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important}
+body table.mobile-records td{display:block!important;grid-column:auto;min-width:0!important;padding:0!important;margin:0!important;border:0!important;font-size:12px!important;line-height:1.6!important;color:var(--muted)!important;white-space:normal!important;overflow-wrap:anywhere!important}
+body table.mobile-records td:before{display:none!important}
+body table.mobile-records td:first-child{grid-column:1!important;grid-row:1!important;font-size:14px!important;font-weight:600!important;color:var(--ink)!important;align-self:center}
+body table.mobile-records td.record-money{grid-column:2!important;grid-row:1/3!important;text-align:right!important;align-self:start!important;font-size:16px!important;color:var(--ink)!important;font-weight:600!important;min-width:0!important;max-width:150px}
+body table.mobile-records td.record-date,body table.mobile-records td.record-description,body table.mobile-records td.record-state{grid-column:1!important;grid-row:auto!important;display:block!important;color:var(--muted)!important;font-weight:400!important}
+body table.mobile-records td.record-operations{grid-column:1/3!important;grid-row:auto!important;padding:0!important;border:0!important;min-height:0!important}
+body table.mobile-records td.empty-cell,body table.mobile-records td.record-operations:not(:has(.record-status)){display:none!important}
+body .receipt-record td:nth-child(2){grid-column:2!important;grid-row:1/3!important;text-align:right!important;color:var(--ink)!important}
+body .receipt-record td:nth-child(3){grid-column:1/3!important;grid-row:3!important;font-size:11px!important;color:var(--muted)!important;font-weight:400!important;text-align:left!important;max-width:none!important}
+body .receipt-record td:nth-child(3):before{display:inline!important;content:'已分配 ';font-size:11px!important}
+body .receipt-amount,body .receipt-ratio{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:3px!important}
+body .receipt-amount b,body .receipt-ratio b{font-size:16px!important;color:var(--ink)!important}
+body .receipt-amount span,body .receipt-ratio span{font-size:10px!important;color:var(--muted)!important;font-weight:400!important}
+body .amount-edit-target{color:inherit!important;min-height:36px!important;max-width:100%;border:0!important;padding:0!important;background:transparent!important;white-space:normal!important}
+body .amount-edit-hint{display:none!important}
+body .income-record-toolbar .income-receipt-view{display:flex!important;flex-wrap:wrap;gap:8px;align-items:center!important}
+body .income-receipt-view>span{font-size:10px!important;color:var(--muted)!important}
+body .compact-main-grid{display:flex!important;flex-direction:column!important;gap:14px!important;min-width:0}
+body .compact-pocket-strip{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
+body .compact-pocket-title,body .compact-pocket-strip>button{grid-column:1/-1!important}
+body .compact-pocket-value{padding:0!important;border:0!important;color:var(--ink)!important}
+body .compact-main-grid :is(.compact-daily-row,.compact-balance-row,.compact-checkpoint){background:transparent!important;border-color:var(--line)!important}
+body .spending-analysis-panel :is(.spending-empty,.spending-share-empty,.spending-analysis-empty){background:var(--surface)!important;color:var(--muted)!important;border-color:var(--line)!important}
+body .compact-main-grid button{white-space:normal!important}
+body .compact-main-grid .spending-share{background:transparent!important;border:0!important;border-radius:0!important}
+body .repayment-composition{background:transparent!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;padding-top:16px!important;margin-top:14px!important}
+body .repayment-future-panel .mobile-records tr{grid-template-columns:minmax(0,1fr) 1fr 1fr!important}
+body .repayment-future-panel .mobile-records td{grid-column:auto!important;grid-row:1!important;font-size:12px!important;text-align:right!important;white-space:nowrap!important}
+body .repayment-future-panel .mobile-records td:first-child{text-align:left!important}
+body .deposit-chart{height:auto!important;min-height:230px!important}
+body .deposit-curve{height:170px!important;min-height:170px!important;max-width:100%;background:transparent!important}
+body .deposit-curve svg{max-width:100%}
+body .trend-change{background:var(--soft)!important;border-color:var(--line)!important;color:var(--muted)!important}
+body .trend-change.rising{color:var(--green)!important}
+body .trend-change.falling{color:var(--orange)!important}
+body .deposit-accounts .touch-record>.account-number{display:none!important}
+body .deposit-accounts .touch-record>.account-name{grid-column:1!important;grid-row:1!important;color:var(--ink)!important}
+body .deposit-accounts .touch-record>td[data-label*='序号']{display:none!important}
+body .deposit-accounts .touch-record>td[data-label*='余额']{grid-column:2!important;grid-row:1!important}
+body .deposit-accounts .touch-record>td[data-label*='净额']{grid-column:1/3!important;grid-row:auto!important;text-align:left!important;font-size:11px!important;color:var(--muted)!important;max-width:none}
+body .deposit-accounts .touch-record>td[data-label*='净额']:before{display:inline!important;content:attr(data-label)' ';font-size:11px}
+body .settings-sheet{display:flex!important;flex-direction:column!important;gap:14px!important;width:100%!important;max-width:none!important;background:transparent!important;border:0!important;padding:0!important}
+body .settings-section{display:block!important;padding:16px!important;background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:7px!important;box-shadow:none!important;margin:0!important}
+body .settings-section h3{margin-bottom:10px!important}
+body .settings-section p,body .settings-section label{color:var(--muted)!important;font-size:12px!important;line-height:1.7!important}
+body .settings-section .settings-plan{display:flex!important;flex-direction:column!important;gap:12px!important;align-items:stretch!important}
+body .settings-plan label{margin:0!important;display:flex;flex-direction:column;gap:5px}
+body .settings-section .settings-row,body .settings-section .settings-sync-row{display:flex!important;flex-wrap:wrap!important;gap:10px!important}
+body .settings-section .settings-backups{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:16px!important;padding-top:14px!important;border-top:1px solid var(--line)!important}
+body .settings-section button{font-size:12px!important;padding:9px 12px!important;min-height:42px!important;max-width:100%;white-space:normal!important}
+body .settings-section details{margin-top:14px!important;border-color:var(--line)!important;color:var(--muted)!important}
+body .settings-section .settings-toggle{display:flex!important;align-items:center;gap:8px!important}
+body aside{position:fixed!important;inset:auto 0 0!important;width:100%!important;max-width:760px!important;height:auto!important;margin:0 auto!important;padding:4px 6px calc(4px + env(safe-area-inset-bottom))!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;background:var(--surface)!important;backdrop-filter:none!important;z-index:30!important}
+body aside:before{display:none!important}
+body #nav{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:0!important;margin:0!important;padding:0!important}
+body #nav button{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;min-width:0!important;height:60px!important;min-height:60px!important;padding:5px 0!important;border:0!important;border-radius:6px!important;background:transparent!important;box-shadow:none!important;font-size:11px!important;color:var(--muted)!important;letter-spacing:0!important}
+body #nav button svg{width:21px!important;height:21px!important}
+body #nav button.active{color:var(--green)!important;background:var(--soft)!important}
+body .notice{background:var(--soft)!important;border:1px solid var(--line)!important;border-radius:6px!important;color:var(--green)!important}
+body .negative,body .danger-button,body .ocr-error{color:#bc6558!important}
+body dialog,body #modal,body #syncModal,body #mobileActionSheet,body #mobileInfoDialog{color:var(--ink)!important;background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:0 16px 60px #0003!important;max-width:min(560px,calc(100vw - 20px))!important;max-height:calc(100dvh - 24px)!important}
+body dialog::backdrop{background:#101b1870!important;backdrop-filter:blur(3px)!important}
+body #mobileActionSheet{position:fixed;inset:auto 0 0!important;margin:0 auto!important;width:100%!important;max-width:760px!important;max-height:85dvh!important;padding:12px 16px calc(16px + env(safe-area-inset-bottom))!important;border-radius:14px 14px 0 0!important;overflow:auto!important}
+body .sheet-grip{width:32px;height:4px;background:var(--line)!important;border-radius:2px;margin:0 auto 14px}
+body #mobileActionSheet h3{margin:10px 0!important}
+body .sheet-options{display:flex;flex-direction:column;gap:0}
+body .sheet-options button,body .sheet-cancel{display:block!important;width:100%!important;padding:13px 10px!important;min-height:48px!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;text-align:left;font-size:14px!important}
+body .sheet-cancel{margin-top:8px;text-align:center;color:var(--muted)!important}
+body #fields,body #formTitle,body .dialog-actions,body .ocr-top,body .ocr-footer,body .ocr-body{background:var(--surface)!important;color:var(--ink)!important;border-color:var(--line)!important}
+body #fields label,body #fields .muted{color:var(--muted)!important}
+body #form{max-height:calc(100dvh - 26px)!important}
+body #fields{min-height:0;overflow-y:auto!important;padding:12px 16px!important}
+body .dialog-actions{flex-wrap:wrap;gap:8px;padding:12px 16px!important}
+body .dialog-actions button{min-height:44px!important}
+body .ocr-dialog .ocr-item,body .ocr-replacement,body .ocr-image-button,body .spending-entry,body .spending-share,body .allocation-row{background:var(--raised)!important;border-color:var(--line)!important;border-radius:6px!important;color:var(--ink)!important}
+body .ocr-dialog .ocr-item{border-radius:0!important}
+body .ocr-dialog :is(label,small,.ocr-hint,.ocr-empty,.ocr-eyebrow){color:var(--muted)!important}
+body .ocr-context input[readonly]{background:var(--bg)!important;color:var(--muted)!important}
+body .spending-analysis-panel svg text,body .annual-money-chart text,body .overview-curve svg text,body .deposit-curve svg text{fill:var(--muted)!important}
+body [hidden]{display:none!important}
+@media(max-width:380px){body main{padding-inline:12px!important}body header{margin-inline:-12px!important;padding-inline:12px!important}body .mobile-top-actions{gap:0}body .mobile-top-actions .icon-button{width:33px!important}body .panel>.toolbar{align-items:flex-start!important}body .overview-cards>.card:nth-child(n+2){padding-inline:8px!important}body .metric-ratio b{font-size:16px!important}body .income-integrated-metrics strong{font-size:23px!important}body .plan-heading strong{max-width:115px}}
+@media(prefers-reduced-motion:reduce){body *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

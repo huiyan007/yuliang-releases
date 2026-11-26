@@ -1,0 +1,41 @@
+body .payment-inbox-dialog {
+  width: min(540px, calc(100% - 24px));
+  padding: 16px;
+}
+body .payment-inbox-dialog > header {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px !important;
+  margin: 0 0 10px !important;
+  padding: 0 0 8px !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+body .payment-inbox-dialog :is(section, article, label, form) { display: grid; min-width: 0; gap: 7px; }
+body .payment-inbox-dialog section { margin: 12px 0; }
+body .payment-inbox-dialog :is(h4, p, ul) { margin: 0; }
+body .payment-inbox-dialog h4 { font-size: 14px; }
+body .payment-inbox-dialog label, body .payment-inbox-dialog small, body .payment-inbox-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+body .payment-inbox-dialog :is(input, select) { width: 100%; padding: 6px; }
+body .payment-inbox-dialog article { padding: 10px 0; border-top: 1px solid var(--line); }
+body .payment-inbox-dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; color: var(--muted); }
+body .payment-inbox-dialog img { width: 100%; max-height: 48vh; object-fit: contain; }
+body .payment-inbox-dialog summary { color: var(--green); font-size: 12px; cursor: pointer; }
+body .payment-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+body .payment-line, body .payment-actions, body .payment-diagnostics li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+body .payment-actions { justify-content: flex-end; }
+body .payment-inbox-dialog button { min-height: 38px; padding: 4px 8px; font-size: 12px; }
+body .payment-diagnostics { padding: 0; font-size: 12px; }
+body .payment-diagnostics li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+body .payment-diagnostics li span { color: var(--muted); }
+body .payment-error { color: var(--orange); font-size: 12px; }

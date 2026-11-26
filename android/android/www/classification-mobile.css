@@ -1,0 +1,38 @@
+/* Make the desktop classification view fit the same mobile cards and dialogs. */
+#modal .spending-review-toolbar { gap: 8px; margin: 6px 0 10px; font-size: 12px; }
+#modal .spending-review-toolbar .sort-control { flex: 1 0 100%; }
+#modal .spending-review-toolbar .toolbar {
+  display: grid; width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;
+}
+#modal .spending-review-toolbar .toolbar button { width: 100%; padding-inline: 4px; }
+#modal .spending-review-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+#modal .spending-share { border-radius: 15px; padding: 12px; gap: 10px; }
+#modal .spending-share-ring { width: min(46%, 168px); }
+#modal .spending-share-legend {
+  grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; gap: 5px 12px;
+}
+#modal .spending-share-legend li { min-width: 0; gap: 4px; }
+#modal .spending-share-legend li > span:nth-child(2) { overflow-wrap: anywhere; }
+#modal .spending-review-table .table-scroll { overflow: visible; }
+#modal .spending-review-table table { width: 100%; min-width: 0; table-layout: fixed; }
+#modal .spending-review-table :is(th,td) {
+  position: static; padding: 7px 3px; font-size: clamp(10px, 2.9vw, 13px);
+  line-height: 1.35; white-space: normal; overflow-wrap: anywhere; vertical-align: middle;
+}
+#modal .spending-review-table th:first-child { width: 20%; }
+#modal .spending-review-table th:nth-child(2) { width: 23%; }
+#modal .spending-entry { padding: 10px 8px; border-radius: 14px; }
+#modal .spending-entry-period {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;
+}
+#modal .spending-entry-period label { min-width: 0; margin: 4px 0; }
+#modal .spending-entry-period input { width: 100%; min-width: 0; padding-inline: 5px; }
+#modal .spending-channel-tabs { gap: 6px; }
+#modal .spending-channel-tabs .chart-switch { width: 100%; }
+#modal .spending-channel-tabs .chart-switch[hidden] { display: none; }
+#modal .spending-channel-tabs button { flex: 1 1 0; padding-inline: 4px; }
+#modal .spending-input-table { min-width: 0; }
+#modal .spending-input-table :is(th,td) { padding-inline: 2px; }
+#modal .spending-input-table :is(input,select) { padding-inline: 5px; font-size: 13px !important; }
+#modal .spending-entry-actions { gap: 6px; }
+#modal .spending-entry-actions #spendingStatus { flex: 1 0 100%; order: 2; }
