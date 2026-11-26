@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const root = __dirname;
 const web = path.join(root, 'android/www');
 const desktopRoot = path.resolve(process.argv[2] || path.join(root, '../../Windows-v3.1.13/yuliang-source-v3.1.13-public/build'));
-const version = '3.3.6';
+const version = '3.3.7';
 const read = file => fs.readFileSync(file, 'utf8');
 const replace = (text, from, to) => {
   assert(text.includes(from), 'Missing integration point: ' + String(from).slice(0, 120));

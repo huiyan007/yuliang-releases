@@ -14,8 +14,8 @@ android {
         applicationId 'cn.yuliang.finance.test'
         minSdk 26
         targetSdk 36
-        versionCode 30306
-        versionName '3.3.6'
+        versionCode 30307
+        versionName '3.3.7'
     }
     sourceSets.main.assets.srcDir(webAssets)
 }

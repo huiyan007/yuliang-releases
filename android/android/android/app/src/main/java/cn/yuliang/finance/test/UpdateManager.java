@@ -24,7 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 final class UpdateManager {
-    static final String CURRENT_VERSION = "3.3.6";
+    static final String CURRENT_VERSION = "3.3.7";
     static final long MAX_APK_BYTES = 200L * 1024L * 1024L;
     private static final String REPOSITORY = "huiyan007/yuliang-releases";
     private static final String RELEASE_PAGE = "https://github.com/" + REPOSITORY + "/releases";
